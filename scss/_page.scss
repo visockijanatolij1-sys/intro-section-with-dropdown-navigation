@@ -205,11 +205,130 @@
     .menu.active{
         width: 70%;
     }
-    .menu.active .menu-list{
-        padding: 24px;
+    .menu.active{
+        padding: 80px 32px;
     }
     // .menu.active.menu::before{
     //     width: 30%;
     // }
+    
+}
+
+// =====================================
+
+.link-dropdown_features{
+    position: relative;
+}
+
+.features-dropdown_menu{
+    position: absolute;
+    left: 80px;
+    top: 40px;
+    max-width: 153px;
+    min-height: 160px;
+    padding: 24px;
+    background-color: variables.$white;
+    border-radius: 15px;
+    box-shadow: 3px 10px 16px 1px #3333335b;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.dropdown-features_link{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.dropdown-features_img{
+    width: 16px;
+    height: 16px;
+    img{
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+}
+.dropdown-features_text{
+    font-size: 14px;
+    line-height: 155%;
+    letter-spacing: 0px;
+    color: variables.$gray500;
+
+}
+
+.features-dropdown_menu.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width:767.98px) {
+    .features-dropdown_menu{
+        position: static;
+        display: none;
+    }
+    .features-dropdown_menu.active{
+        display: flex;
+        box-shadow: none;
+        flex-direction: column;
+        gap: 16px;
+        background-color: transparent;
+    }
+    .menu-list{
+        gap: 16px;
+    }
+    .menu {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+.link-dropdown_company{
+    position: relative;
+}
+.company-dropdown_menu{
+    position: absolute;
+    box-shadow: 3px 10px 16px 1px #3333335b;
+    background-color: variables.$white;
+    border-radius: 10px;
+    top: 40px;
+    max-width: 116px;
+    min-height: 126px;
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.dropdown-company_link{
+    font-size: 14px;
+    line-height: 115%;
+    letter-spacing: 0px;
+    color: variables.$gray500;
+
+}
+
+.company-dropdown_menu.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 767.98px) {
+    .company-dropdown_menu{
+        position: static;
+        display: none;
+    }
+    .company-dropdown_menu.active{
+        display: flex;
+        box-shadow: none;
+        background-color: transparent;
+        padding: 16px;
+    }
+}
+@media (max-width: 424.98px) {
     
 }
