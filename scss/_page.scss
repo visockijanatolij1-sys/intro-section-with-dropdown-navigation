@@ -33,7 +33,12 @@
 }
 .menu{
     margin-left: 64px;
-    transition: all 0.3s ease 0s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    
 }
 .menu-list{
     display: flex;
@@ -80,8 +85,27 @@
 }
 
 @media (max-width:767.98px) {
-    .menu, .menu-buttons{
-        display: none;
+    .menu{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 64%;
+        transform: translateX(180%);
+        transition: all 0.3s ease 0s;
+        flex-direction: column;
+        padding: 80px 48px 32px;
+        margin-left: 0;
+        z-index: 2;
+    }
+    .menu-buttons{
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+        gap: 16px;
+    }
+    .button-menu_register{
+        width: 100%;
     }
     .burger{
         display: block;
@@ -134,43 +158,58 @@
         }
     }
     .menu.active{
-        display: block;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 40%;
-        transition: all 0.3s ease 0s;
+        // display: block;
+        transform: translateX(0);
+        
     }
-    .menu.active.menu::before{
-        content: "";
+    // .menu.active.menu::before{
+    //     content: "";
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     width: 36%;
+    //     background-color: variables.$gray500;
+    //     opacity: 0.2;
+    // }
+    .menu-overlay {
         position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 60%;
-        background-color: variables.$gray500;
-        opacity: 0.2;
+        inset: 0;
+        width: 36%;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
     }
     .menu.active .menu-list{
         display: flex;
         flex-direction: column;
         margin-right: auto;
-        padding: 32px 48px;
-        min-height: 304px;
-        margin-top: 40px;
+       
         align-items: flex-start;
     }
-    
+        .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
 
 
 }
 
 @media (max-width: 508px) {
+    
     .menu.active{
         width: 70%;
     }
     .menu.active .menu-list{
         padding: 24px;
     }
+    // .menu.active.menu::before{
+    //     width: 30%;
+    // }
+    
 }
