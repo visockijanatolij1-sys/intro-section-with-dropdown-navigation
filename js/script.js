@@ -24,3 +24,4 @@ featuresDropdownButton.addEventListener("click", () => {
 companyDropdownButton.addEventListener("click", () => {
     companyDropdown.classList.toggle("active");
 });
+
