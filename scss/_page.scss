@@ -60,6 +60,7 @@
         color: variables.$gray950;
     }
 }
+
 .menu-buttons{
     margin-left: auto;
     display: flex;
@@ -309,8 +310,8 @@
     line-height: 115%;
     letter-spacing: 0px;
     color: variables.$gray500;
-
 }
+
 
 .company-dropdown_menu.active{
     visibility: visible;
@@ -489,4 +490,7 @@
         line-height: 155%;
         letter-spacing: -0.25px;
     }
+}
+.menu{
+    background-color: variables.$gray50;
 }

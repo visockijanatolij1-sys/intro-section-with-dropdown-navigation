@@ -22,3 +22,17 @@ ul,li{
 a{
     text-decoration: none;
 }
+button{
+    background-color: transparent;
+}
+
+.menu-link:focus-visible,
+.button-menu_login:focus-visible,
+.button-menu_register:focus-visible,
+.block-hero_button:focus-visible,
+.dropdown-features_link:focus-visible,
+.dropdown-company_link:focus-visible,
+.burger:focus-visible {
+    outline: 2px solid #151515;
+    outline-offset: 4px;
+}
